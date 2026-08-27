@@ -9,21 +9,20 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   const { isDark } = useTheme();
 
   const footerBg = isDark
-    ? 'bg-[#93623d] border-t border-[#f3e4c9]/25'
-    : 'bg-[#93623d] border-t border-[#f3e4c9]/30';
+    ? 'bg-[#c7d8d6] border-t border-[#102a43]/20'
+    : 'bg-[#c7d8d6] border-t border-[#102a43]/20';
 
-  const textPrimary = 'text-[#f3e4c9]';
-  const textSecondary = 'text-[#d3d4c0]';
-  const textMuted = 'text-[#ead3b3]';
-  const borderColor = 'border-[#f3e4c9]/25';
+  const textPrimary = 'text-[#102a43]';
+  const textSecondary = 'text-[#102a43]/90';
+  const textMuted = 'text-[#102a43]/80';
+  const borderColor = 'border-[#102a43]/20';
 
   const cardBg = isDark
-    ? 'bg-[#0d2f4d]/35 border border-[#f3e4c9]/20'
-    : 'bg-[#0d2f4d]/25 border border-[#f3e4c9]/25';
+    ? 'bg-[#0f766e]/10 border border-[#102a43]/15'
+    : 'bg-[#0f766e]/10 border border-[#102a43]/15';
 
-  const cardHover = 'hover:bg-[#0d2f4d]/55 hover:border-[#f3e4c9]/50';
+  const cardHover = 'hover:bg-[#0f766e]/15 hover:border-[#0f766e]/40';
 
-  // ----- UPDATED LINKS: Year 3 Modules moved to Tools -----
   const links = {
     Platform: [
       { label: 'CCNA Quiz', page: 'ccna-quiz' },
@@ -40,29 +39,14 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
     ],
     About: [
       { label: '💜 Memory', page: 'memory' },
-      { label: 'Home', page: 'home' }, // Year 3 removed
+      { label: 'Home', page: 'home' },
     ],
   };
 
   const socialLinks = [
-    {
-      name: 'Medium',
-      icon: '✍️',
-      url: 'https://medium.com/@bjxyz98',
-      color: 'hover:text-[#f3e4c9]',
-    },
-    {
-      name: 'LinkedIn',
-      icon: '💼',
-      url: 'https://www.linkedin.com/in/bijay-kumar-yadav-6a2b3b369/',
-      color: 'hover:text-[#d3d4c0]',
-    },
-    {
-      name: 'GitHub',
-      icon: '💻',
-      url: 'https://github.com/bijaykumaryadav5525',
-      color: 'hover:text-[#f3e4c9]',
-    },
+    { name: 'Medium', icon: '✍️', url: 'https://medium.com/@bjxyz98', color: 'hover:text-[#078f40]' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/bijay-kumar-yadav-6a2b3b369/', color: 'hover:text-[#43f0e5]' },
+    { name: 'GitHub', icon: '💻', url: 'https://github.com/bijaykumaryadav5525', color: 'hover:text-[#078f40]' },
   ];
 
   const scrollToTop = () => {
@@ -70,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   };
 
   return (
-    <footer className={`${footerBg} text-[#f5e9df]`}>
+    <footer className={`${footerBg} text-[#102a43]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8">
           {/* Brand */}
@@ -79,11 +63,11 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               onClick={() => setCurrentPage('home')}
               className="flex items-center gap-2 group"
             >
-              <div className="w-10 h-10 bg-[#0d2f4d] rounded-xl flex items-center justify-center shadow-lg shadow-[#0d2f4d]/25 group-hover:shadow-[#f3e4c9]/30 transition-shadow">
+              <div className="w-10 h-10 bg-[#0f766e] rounded-xl flex items-center justify-center shadow-lg shadow-[#102a43]/15 group-hover:shadow-[#e76f51]/30 transition-shadow">
                 <span className="text-white font-bold text-sm">NA</span>
               </div>
               <span className={`font-bold text-xl ${textPrimary}`}>
-                NOEA <span className="text-[#d3d4c0]">Academy</span>
+                NOEA <span className="text-[#0f766e]">Academy</span>
               </span>
             </button>
             <p className={`${textSecondary} text-sm leading-relaxed max-w-sm`}>
@@ -117,7 +101,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li key={item.label}>
                   <button
                     onClick={() => setCurrentPage(item.page)}
-                    className={`${textSecondary} hover:text-green-400 transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
+                    className={`${textSecondary} hover:text-[#e76f51] transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
                   >
                     {item.label}
                   </button>
@@ -136,7 +120,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li key={item.label}>
                   <button
                     onClick={() => setCurrentPage(item.page)}
-                    className={`${textSecondary} hover:text-green-400 transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
+                    className={`${textSecondary} hover:text-[#e76f51] transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
                   >
                     {item.label}
                   </button>
@@ -155,7 +139,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li key={item.label}>
                   <button
                     onClick={() => setCurrentPage(item.page)}
-                    className={`${textSecondary} hover:text-green-400 transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
+                    className={`${textSecondary} hover:text-[#e76f51] transition-colors text-xs hover:translate-x-1 inline-block whitespace-nowrap`}
                   >
                     {item.label}
                   </button>
@@ -164,7 +148,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             </ul>
             <button
               onClick={scrollToTop}
-              className={`flex items-center gap-1 px-4 py-2 rounded-full text-xs font-medium ${cardBg} ${textSecondary} hover:text-green-400 hover:border-green-400/50 transition-all whitespace-nowrap`}
+              className={`flex items-center gap-1 px-4 py-2 rounded-full text-xs font-semibold ${cardBg} ${textSecondary} hover:text-[#e76f51] hover:border-[#e76f51]/50 transition-all whitespace-nowrap`}
             >
               ↑ Back to top
             </button>

@@ -11,7 +11,7 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -35,10 +35,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   if (!mounted) return null;
 
-  const darkBg = 'bg-[#0d2f4d]';
-  const darkText = 'text-[#f3e4c9]';
-  const lightBg = 'bg-[#f3e4c9]';
-  const lightText = 'text-[#0d2f4d]';
+  const darkBg = 'bg-[#102a43]';
+  const darkText = 'text-[#fffdf8]';
+  const lightBg = 'bg-[#fffdf8]';
+  const lightText = 'text-[#102a43]';
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
@@ -47,7 +47,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           isDark ? darkBg : lightBg
         } ${isDark ? darkText : lightText}`}
         style={{
-          boxShadow: isDark ? 'inset 0 0 80px rgba(13, 47, 77, 0.35)' : 'none',
+          boxShadow: isDark ? 'inset 0 0 80px rgba(16, 42, 67, 0.25)' : 'none',
         }}
       >
         {children}

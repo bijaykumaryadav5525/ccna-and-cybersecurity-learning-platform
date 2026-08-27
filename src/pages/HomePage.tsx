@@ -8,18 +8,18 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
   const { isDark } = useTheme();
 
-  const bg = isDark ? 'bg-[#0d2f4d]' : 'bg-[#f3e4c9]';
-  const cardBg = isDark ? 'bg-[#16405c] border-[#d3d4c0]/30' : 'bg-[#d3d4c0] border-[#0d2f4d]/20';
-  const text = isDark ? 'text-[#f3e4c9]' : 'text-[#0d2f4d]';
-  const subText = isDark ? 'text-[#d3d4c0]' : 'text-[#0d2f4d]';
+  const bg = isDark ? 'bg-[#102a43]' : 'bg-[#fffdf8]';
+  const cardBg = isDark ? 'bg-[#173b5a] border-[#fffdf8]/15' : 'bg-white border-[#102a43]/10';
+  const text = isDark ? 'text-[#fffdf8]' : 'text-[#102a43]';
+  const subText = isDark ? 'text-[#fffdf8]/75' : 'text-[#102a43]/75';
 
   const features = [
-    { id: 'ccna-quiz', icon: '🌐', label: 'Network Quiz', desc: 'OSI model, subnetting, routing protocols, VLANs, etc. Detailed explanations.', badge: '17 Modules', tags: ['Routing', 'Switching', 'IPv6', 'Security'], color: 'from-blue-500 to-blue-700' },
-    { id: 'cyber-quiz', icon: '🛡️', label: 'Cyber Security Quiz', desc: 'Cybersecurity concepts, cryptography, threats, compliance frameworks, etc.', badge: '21 Modules', tags: ['Threats', 'Crypto', 'Compliance', 'IDS/IPS'], color: 'from-purple-500 to-purple-700' },
-    { id: 'ccna-lab', icon: '💻', label: 'CCNA Labs', desc: 'Step-by-step Cisco lab guides with real commands, topology diagrams, and verification steps.', badge: '14 Labs', tags: ['Router Config', 'VLAN', 'OSPF', 'ACL'], color: 'from-green-500 to-green-700' },
-    { id: 'cyber-threats', icon: '⚠️', label: 'Cyber Threats', desc: 'Scenario-based real-world threat simulations. Learn to identify and respond to phishing, ransomware, MITM attacks.', badge: '25 Scenarios', tags: ['Phishing', 'Ransomware', 'SQLi', 'DDoS'], color: 'from-red-500 to-orange-600' },
-    { id: 'password', icon: '🔒', label: 'Password Strength Checker', desc: 'Real-time password strength analysis with entropy calculation and security recommendations.', badge: 'Interactive', tags: ['Entropy', 'Breach Check', 'Tips'], color: 'from-yellow-500 to-amber-600' },
-    { id: 'certificate', icon: '🏆', label: 'Earn Certificate', desc: 'Complete quizzes and earn a personalized certificate based on your performance. Excellent, Good, or More to Learn.', badge: 'Achievement', tags: ['CCNA', 'Security', 'Achievement'], color: 'from-indigo-500 to-violet-600' },
+    { id: 'ccna-quiz', icon: '🌐', label: 'Network Quiz', desc: 'OSI model, subnetting, routing protocols, VLANs, etc. Detailed explanations.', badge: '17 Modules', tags: ['Routing', 'Switching', 'IPv6', 'Security'], color: 'from-[#0f766e] to-[#115e59]' },
+    { id: 'cyber-quiz', icon: '🛡️', label: 'Cyber Security Quiz', desc: 'Cybersecurity concepts, cryptography, threats, compliance frameworks, etc.', badge: '21 Modules', tags: ['Threats', 'Crypto', 'Compliance', 'IDS/IPS'], color: 'from-[#102a43] to-[#243b53]' },
+    { id: 'ccna-lab', icon: '💻', label: 'CCNA Labs', desc: 'Step-by-step Cisco lab guides with real commands, topology diagrams, and verification steps.', badge: '14 Labs', tags: ['Router Config', 'VLAN', 'OSPF', 'ACL'], color: 'from-[#2a9d8f] to-[#0f766e]' },
+    { id: 'cyber-threats', icon: '⚠️', label: 'Cyber Threats', desc: 'Scenario-based real-world threat simulations. Learn to identify and respond to phishing, ransomware, MITM attacks.', badge: '25 Scenarios', tags: ['Phishing', 'Ransomware', 'SQLi', 'DDoS'], color: 'from-[#e76f51] to-[#c9553c]' },
+    { id: 'password', icon: '🔒', label: 'Password Strength Checker', desc: 'Real-time password strength analysis with entropy calculation and security recommendations.', badge: 'Interactive', tags: ['Entropy', 'Breach Check', 'Tips'], color: 'from-[#f4a261] to-[#e76f51]' },
+    { id: 'certificate', icon: '🏆', label: 'Earn Certificate', desc: 'Complete quizzes and earn a personalized certificate based on your performance. Excellent, Good, or More to Learn.', badge: 'Achievement', tags: ['CCNA', 'Security', 'Achievement'], color: 'from-[#457b9d] to-[#102a43]' },
   ];
 
   const whyItems = [
@@ -31,7 +31,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
   return (
     <div className={`min-h-screen ${bg}`}>
       {/* Hero */}
-      <div className={`relative overflow-hidden pt-16 ${isDark ? 'bg-[#0d2f4d]' : 'bg-[#d3d4c0]'}`}>
+      <div className={`relative overflow-hidden pt-16 ${isDark ? 'bg-[#102a43]' : 'bg-[#d9e7e5]'}`}>
         {/* Animated particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
@@ -68,13 +68,13 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setCurrentPage('ccna-quiz')}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl font-bold text-lg hover:from-blue-600 hover:to-blue-800 transition-all shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-0.5"
+              className="px-8 py-4 bg-[#0f766e] text-white rounded-xl font-bold text-lg hover:bg-[#115e59] transition-all shadow-lg hover:shadow-[#0f766e]/25 transform hover:-translate-y-0.5"
             >
               🌐 Start Network Quiz
             </button>
             <button
               onClick={() => setCurrentPage('cyber-quiz')}
-              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-xl font-bold text-lg hover:from-purple-600 hover:to-purple-800 transition-all shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
+              className="px-8 py-4 bg-[#e76f51] text-white rounded-xl font-bold text-lg hover:bg-[#c9553c] transition-all shadow-lg hover:shadow-[#e76f51]/25 transform hover:-translate-y-0.5"
             >
               🛡️ Start Security Quiz
             </button>
@@ -129,7 +129,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       </div>
 
       {/* What is Networking? */}
-      <div className={`py-16 ${isDark ? 'bg-[#0d2f4d]' : 'bg-[#f3e4c9]'}`}>
+      <div className={`py-16 ${isDark ? 'bg-[#102a43]' : 'bg-[#fffdf8]'}`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <p className={`text-sm font-semibold tracking-widest ${isDark ? 'text-blue-400' : 'text-blue-600'} mb-2`}>UNDERSTANDING THE BASICS</p>
@@ -173,7 +173,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       </div>
 
       {/* Why Threats Are Increasing */}
-      <div className={`py-16 ${isDark ? 'bg-[#0d2f4d]' : 'bg-[#f3e4c9]'}`}>
+      <div className={`py-16 ${isDark ? 'bg-[#102a43]' : 'bg-[#fffdf8]'}`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className={`text-3xl sm:text-4xl font-black ${text}`}>Why Threats Are <span className="text-red-400">Increasing</span></h2>
@@ -222,7 +222,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       {/* CCNA Quiz */}
       <button
         onClick={() => setCurrentPage('Network-quiz')}
-        className="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg shadow-blue-900/20"
+        className="px-8 py-3 bg-[#0f766e] text-white rounded-xl font-bold hover:bg-[#115e59] transition-colors shadow-lg shadow-[#0f766e]/20"
       >
         🌐 Network Quiz
       </button>
@@ -230,7 +230,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       {/* CCNA Labs */}
       <button
         onClick={() => setCurrentPage('ccna-lab')}
-        className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg shadow-green-900/20"
+        className="px-8 py-3 bg-[#2a9d8f] text-white rounded-xl font-bold hover:bg-[#0f766e] transition-colors shadow-lg shadow-[#2a9d8f]/20"
       >
         💻 CCNA Labs
       </button>
@@ -238,7 +238,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       {/* Cyber Security Quiz — NEW BUTTON */}
       <button
         onClick={() => setCurrentPage('cyber-quiz')}
-        className="px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg shadow-purple-900/20"
+        className="px-8 py-3 bg-[#102a43] text-white rounded-xl font-bold hover:bg-[#243b53] transition-colors shadow-lg shadow-[#102a43]/20"
       >
         🔐 Cyber Security Quiz
       </button>
@@ -246,7 +246,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       {/* Cyber Threats */}
       <button
         onClick={() => setCurrentPage('cyber-threats')}
-        className="px-8 py-3 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg shadow-red-900/20"
+        className="px-8 py-3 bg-[#e76f51] text-white rounded-xl font-bold hover:bg-[#c9553c] transition-colors shadow-lg shadow-[#e76f51]/20"
       >
         ⚠️ Cyber Threats
       </button>
