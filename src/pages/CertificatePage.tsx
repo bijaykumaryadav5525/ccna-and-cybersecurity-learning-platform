@@ -447,20 +447,6 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
               {/* Header */}
               <div className="w-full">
                 <div className="relative inline-block px-[3.2cqw] py-[0.45cqw]">
-                  <div
-                    className="absolute inset-x-0 top-0 h-0.5"
-                    style={{
-                      backgroundColor: rating.borderColor,
-                    }}
-                  />
-
-                  <div
-                    className="absolute inset-x-0 bottom-0 h-0.5"
-                    style={{
-                      backgroundColor: rating.borderColor,
-                    }}
-                  />
-
                   <h1
                     className="font-serif font-bold tracking-[0.25em] text-[#d4af37] uppercase leading-none"
                     style={{
