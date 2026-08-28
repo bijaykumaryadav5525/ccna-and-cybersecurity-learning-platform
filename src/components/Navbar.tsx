@@ -45,7 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   const baseButtonClass = `w-full text-left px-4 py-3 text-sm transition-colors ${
-    'text-[#102a43] hover:bg-[#d9e7e5]'
+    isDark
+      ? 'text-slate-100 hover:bg-slate-800'
+      : 'text-[#102a43] hover:bg-[#e7f3f1]'
   }`;
 
   return (
@@ -127,55 +129,55 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div
                   className={`absolute right-0 top-full mt-2 w-64 rounded-xl border shadow-xl overflow-hidden ${
                     isDark
-                      ? 'bg-[#0f766e] border-[#d9e7e5]'
-                      : 'bg-[#102a43] border-[#d9e7e5]'
+                      ? 'bg-slate-900 border-slate-700'
+                      : 'bg-white border-[#0f766e]/30'
                   }`}
                 >
                   {/* Years Section */}
                   <button
                     type="button"
                     onClick={() => handleNavigation('year1')}
-                    className={`${baseButtonClass} ${currentPage === 'year1' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'year1' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Year 1 (Coming soon)
                   </button>
                   <button
                     type="button"
                     onClick={() => handleNavigation('year2')}
-                    className={`${baseButtonClass} ${currentPage === 'year2' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'year2' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Year 2 (Coming soon)
                   </button>
                   <button
                     type="button"
                     onClick={() => handleNavigation('year3')}
-                    className={`${baseButtonClass} ${currentPage === 'year3' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'year3' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Year 3 (Coming soon)
                   </button>
 
                   {/* Divider */}
-                  <div className="h-px my-1 bg-[#e4da45]/20" />
+                  <div className={`h-px my-1 ${isDark ? 'bg-slate-700' : 'bg-[#0f766e]/15'}`} />
 
                   {/* Modules Section (Fixed links so they actually work) */}
                   <button
                     type="button"
                     onClick={() => handleNavigation('operating-systems')}
-                    className={`${baseButtonClass} ${currentPage === 'operating-systems' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'operating-systems' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Operating System
                   </button>
                   <button
                     type="button"
                     onClick={() => handleNavigation('risk')}
-                    className={`${baseButtonClass} ${currentPage === 'risk' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'risk' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Risk, Crisis & Security Management
                   </button>
                   <button
                     type="button"
                     onClick={() => handleNavigation('cloud')}
-                    className={`${baseButtonClass} ${currentPage === 'cloud' ? 'text-green-400 font-bold' : ''}`}
+                    className={`${baseButtonClass} ${currentPage === 'cloud' ? 'text-[#0f766e] font-bold' : ''}`}
                   >
                     Cloud Computing & the Internet of Things(IoT)
                   </button>

@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ccna-and-cybersecurity-learning-platform",
+  "compatibility_date": "2026-08-26",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "netsec.bijaykumaryadav78.com.np",
+      "custom_domain": true
+    }
+  ]
+}

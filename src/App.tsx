@@ -84,7 +84,7 @@ const AppContent: React.FC = () => {
   };
 
   // Pages that open FULL SCREEN (No Navbar & Footer)
-  const isFullScreen = ['quiz-active', 'operating-systems', 'risk', 'cloud', 'year1', 'year2', 'year3'].includes(currentPage);
+  const isFullScreen = ['quiz-active', 'operating-systems', 'risk', 'cloud', 'year1', 'year2', 'year3', 'certificate'].includes(currentPage);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -121,13 +121,13 @@ const AppContent: React.FC = () => {
 
       // Operating System Page (Full Screen)
       case 'operating-systems':
-        return <OperatingPage onBack={() => navigate('home')} />;
+        return <OperatingPage onBack={() => navigate('home')} onComplete={handleQuizComplete} />;
 
       case 'risk':
         return <RiskPage onBack={() => navigate('home')} onComplete={handleQuizComplete} />;
 
       case 'cloud':
-        return <CloudPage onBack={() => navigate('home')} />;
+        return <CloudPage onBack={() => navigate('home')} onComplete={handleQuizComplete} />;
 
       case 'memory':
         return <MemoryPage onBack={() => navigate('home')} onStartCCNA={() => navigate('ccna-quiz')} onStartSecurity={() => navigate('cyber-quiz')} />;
@@ -136,7 +136,7 @@ const AppContent: React.FC = () => {
     }
   };
 
-  const showFooter = !['quiz-active'].includes(currentPage);
+  const showFooter = !['quiz-active', 'certificate'].includes(currentPage);
 
   return (
     <div className="min-h-screen flex flex-col">
