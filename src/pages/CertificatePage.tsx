@@ -491,33 +491,6 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                     {submittedName}
                   </div>
 
-                  <div
-                    className="flex items-center justify-center gap-4"
-                    style={{ marginTop: '1.4cqw' }}
-                  >
-                    <div
-                      className="h-px w-12"
-                      style={{
-                        backgroundColor: rating.borderColor,
-                      }}
-                    />
-
-                    <span
-                      style={{
-                        color: rating.borderColor,
-                        fontSize: '1cqw',
-                      }}
-                    >
-                      ◆
-                    </span>
-
-                    <div
-                      className="h-px w-12"
-                      style={{
-                        backgroundColor: rating.borderColor,
-                      }}
-                    />
-                  </div>
                 </div>
 
                 <p
