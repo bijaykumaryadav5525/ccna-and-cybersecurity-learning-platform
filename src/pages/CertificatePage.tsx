@@ -491,7 +491,10 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                     {submittedName}
                   </div>
 
-                  <div className="flex items-center justify-center gap-4 mt-1">
+                  <div
+                    className="flex items-center justify-center gap-4"
+                    style={{ marginTop: '1.4cqw' }}
+                  >
                     <div
                       className="h-px w-12"
                       style={{
