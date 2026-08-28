@@ -508,6 +508,8 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                   className="mt-3 px-4 py-1"
                   style={{
                     maxWidth: '88%',
+                    position: 'relative',
+                    zIndex: 2,
                   }}
                 >
                   <div
@@ -516,6 +518,7 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                       fontFamily:
                         'Georgia, "Times New Roman", serif',
                       fontSize: '8cqw',
+                      lineHeight: '1.15',
                     }}
                   >
                     {submittedName}
@@ -524,10 +527,13 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                 </div>
 
                 <p
-                  className="mt-3 max-w-[80%] leading-relaxed"
+                  className="max-w-[80%] leading-relaxed"
                   style={{
                     color: 'rgba(255,255,255,0.80)',
                     fontSize: '1.5cqw',
+                    position: 'relative',
+                    zIndex: 1,
+                    marginTop: '2.5cqw',
                   }}
                 >
                   for successfully completing the{' '}
