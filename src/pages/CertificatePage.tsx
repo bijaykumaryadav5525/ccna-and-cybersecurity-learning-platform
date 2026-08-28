@@ -118,9 +118,9 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
   const getRating = (pct: number) => {
     if (pct >= 90) {
       return {
-        label: 'Excellent',
+        label: 'Expert Distinction',
         grade: 'A',
-        subtitle: 'OF EXCELLENCE',
+        subtitle: 'PROFESSIONAL CREDENTIAL',
         color: '#d4af37',
         borderColor: '#d4af37',
       };
@@ -128,9 +128,9 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
 
     if (pct >= 80) {
       return {
-        label: 'Very Good',
+        label: 'Professional Merit',
         grade: 'B',
-        subtitle: 'OF DISTINCTION',
+        subtitle: 'PROFESSIONAL CREDENTIAL',
         color: '#b8c4d0',
         borderColor: '#b8c4d0',
       };
@@ -138,9 +138,9 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
 
     if (pct >= 70) {
       return {
-        label: 'Good',
+        label: 'Applied Merit',
         grade: 'C',
-        subtitle: 'OF MERIT',
+        subtitle: 'LEARNING CREDENTIAL',
         color: '#cd7f32',
         borderColor: '#cd7f32',
       };
@@ -148,18 +148,18 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
 
     if (pct >= 60) {
       return {
-        label: 'Average',
+        label: 'Achievement',
         grade: 'D',
-        subtitle: 'OF ACHIEVEMENT',
+        subtitle: 'LEARNING CREDENTIAL',
         color: '#6b8cae',
         borderColor: '#6b8cae',
       };
     }
 
     return {
-      label: 'Participation',
+      label: 'Foundation Participation',
       grade: 'E',
-      subtitle: 'OF PARTICIPATION',
+      subtitle: 'FOUNDATION CREDENTIAL',
       color: '#8e8e93',
       borderColor: '#8e8e93',
     };
@@ -460,7 +460,17 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                 </div>
 
                 <div
-                  className="mt-1 font-serif font-medium tracking-[0.35em]"
+                  className="mt-[1.1cqw] uppercase tracking-[0.16em]"
+                  style={{
+                    color: 'rgba(255,255,255,0.5)',
+                    fontSize: '0.95cqw',
+                  }}
+                >
+                  NetSec Academy | Independent Professional Credential
+                </div>
+
+                <div
+                  className="mt-[0.8cqw] font-serif font-medium tracking-[0.35em]"
                   style={{
                     color: rating.borderColor,
                     fontSize: '2.2cqw',
@@ -487,7 +497,7 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                     fontSize: '1.4cqw',
                   }}
                 >
-                  This certificate is proudly presented to
+                  This credential is proudly presented to
                 </p>
 
                 <div
@@ -694,7 +704,7 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                         color: 'rgba(255,255,255,0.85)',
                       }}
                     >
-                      netsec.academy/verify
+                      netsec.bijaykumaryadav78.com.np/verify
                     </span>
                   </span>
                 </div>
