@@ -577,10 +577,9 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                     </div>
 
                     <div
-                      className="font-serif font-bold border-b-2 w-full pb-1"
+                      className="font-serif font-bold w-full"
                       style={{
                         color: 'rgba(255,255,255,0.95)',
-                        borderColor: rating.borderColor,
                         fontSize: '1.75cqw',
                         lineHeight: '1.25',
                       }}
@@ -638,10 +637,9 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
                     </div>
 
                     <div
-                      className="font-serif italic border-b-2 w-full pb-1 text-right"
+                      className="font-serif italic w-full text-right"
                       style={{
                         color: 'rgba(255,255,255,0.95)',
-                        borderColor: rating.borderColor,
                         fontFamily:
                           '"Segoe Print", "Bradley Hand", cursive',
                         fontSize: '1.9cqw',
@@ -666,9 +664,8 @@ const CertificatePage: React.FC<CertificatePageProps> = ({
 
                 {/* BOTTOM META */}
                 <div
-                  className="flex flex-nowrap justify-between items-center w-full border-t"
+                  className="flex flex-nowrap justify-between items-center w-full"
                   style={{
-                    borderColor: `${rating.borderColor}60`,
                     paddingTop: '0.9cqw',
                     marginTop: '0.15cqw',
                     gap: '2cqw',
