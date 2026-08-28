@@ -12,15 +12,45 @@ const renderElementToCanvas = async (
   element: HTMLElement,
   scale = 2,
 ): Promise<HTMLCanvasElement> => {
-  const canvas = await html2canvas(element, {
-    scale,
-    useCORS: true,
-    allowTaint: true,
-    logging: false,
-    backgroundColor: '#0a1628',
+  const clone = element.cloneNode(true) as HTMLElement;
+  const sourceElements = [element, ...Array.from(element.querySelectorAll('*'))];
+  const cloneElements = [clone, ...Array.from(clone.querySelectorAll('*'))];
+
+  cloneElements.forEach((cloneElement, index) => {
+    const sourceElement = sourceElements[index] as HTMLElement;
+    const computedStyle = window.getComputedStyle(sourceElement);
+    const cloneHtmlElement = cloneElement as HTMLElement;
+
+    for (const property of computedStyle) {
+      cloneHtmlElement.style.setProperty(
+        property,
+        computedStyle.getPropertyValue(property),
+        computedStyle.getPropertyPriority(property),
+      );
+    }
   });
 
-  return canvas;
+  const { width, height } = element.getBoundingClientRect();
+  clone.style.position = 'fixed';
+  clone.style.left = '-10000px';
+  clone.style.top = '0';
+  clone.style.width = `${width}px`;
+  clone.style.height = `${height}px`;
+  clone.style.transform = 'none';
+  clone.style.margin = '0';
+  document.body.appendChild(clone);
+
+  try {
+    return await html2canvas(clone, {
+      scale,
+      useCORS: true,
+      allowTaint: true,
+      logging: false,
+      backgroundColor: '#0a1628',
+    });
+  } finally {
+    clone.remove();
+  }
 };
 
 interface CertificatePageProps {
